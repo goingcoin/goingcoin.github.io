@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>fullPage.js One Page Scroll Sites</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage plugin by Alvaro Trigo. Create fullscreen pages fast and simple. One page scroll like iPhone website." />
+	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="css/examples.css" />
+
+
+	<style>
+
+		/* Sections
+		 * --------------------------------------- */
+         .section{
+             text-align:center;
+         }
+         
+		/* Backgrounds will cover all the section
+        * --------------------------------------- */
+        #home_section,
+        #whitepaper_section,
+        #about_section,
+        #roadmap_section,
+		#team_section,
+		#contact_section{
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Defining each sectino background and styles
+        * --------------------------------------- */
+        #home_section{
+            background-image: url(imgs/bg1.jpg);
+        }
+        #home_section h1{
+            top: 50%;
+            transform: translateY(-50%);
+            position: relative;
+        }
+        #whitepaper_section{
+            background-image: url(imgs/bg2.jpg);
+            padding: 6% 0 0 0;
+        }
+        #about_section{
+            background-image: url(imgs/bg3.jpg);
+        }
+        #roadmap_section{
+            background-image: url(imgs/bg4.jpg);
+        }
+        #roadmap_section h1{
+            color: #000;
+        }
+		#team_section{
+            background-image: url(imgs/bg4.jpg);
+        }
+		#contact_section{
+            background-image: url(imgs/bg4.jpg);
+        }
+
+		.intro p{
+			width: 50%;
+			margin: 0 auto;
+			font-size: 1.5em;
+		}
+		.twitter-share-button{
+			position: absolute;
+			z-index: 99;
+			right: 149px;
+			top: 9px;
+		}
+
+	</style>
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+    <script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+	<script type="text/javascript" src="js/examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+				anchors: ['home', 'whitepaper', 'about', 'roadmap', 'team', 'contact'],
+				menu: '#menu',
+				scrollingSpeed: 1000
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+    <ul id="menu">
+        <li data-menuanchor="home"><a href="#home_section">HOME</a></li>
+        <li data-menuanchor="whitepaper"><a href="#whitepaper_section">WHITE PAPER</a></li>
+        <li data-menuanchor="about"><a href="#about_section">ABOUT</a></li>
+        <li data-menuanchor="roadmap"><a href="#roadmap_section">ROADMAP</a></li>
+        <li data-menuanchor="team"><a href="#team_section">TEAM</a></li>
+        <li data-menuanchor="contact"><a href="#contact_section">CONTACT</a></li>
+    </ul>
+
+
+<div id="fullpage">
+	<div class="section " id="home_section">
+		<h1>HOME</h1>
+		 <input type="hidden" name="id" value="1" />
+		<p>Create Beautiful Fullscreen Scrolling Websites</p>
+		<img src="imgs/fullPage.png" alt="fullPage" />
+	</div>
+	<div class="section" id="whitepaper_section">
+		<div class="slide">
+			<div class="intro">
+				<h1>Create Sliders</h1>
+				<p>Not only vertical scrolling but also horizontal scrolling. With fullPage.js you will be able to add horizontal sliders in the most simple way ever.</p>
+				<img src="imgs/slider.png" alt="slider" />
+			</div>
+
+		</div>
+		<div class="slide">
+			<div class="intro">
+				<img src="imgs/1.png" alt="simple" />
+				<h1>Simple</h1>
+				<p>Easy to use. Configurable and customizable.</p>
+			</div>
+		</div>
+		<div class="slide">
+			<div class="intro">
+				<img src="imgs/2.png" alt="Cool" />
+				<h1>Cool</h1>
+				<p>It just looks cool. Impress everybody with a simple and modern web design!</p>
+			</div>
+		</div>
+		<div class="slide">
+			<div class="intro">
+				<img src="imgs/3.png" alt="Compatible" />
+				<h1>Compatible</h1>
+				<p>Working in modern and old browsers too! IE 8 users don't have the fault of using that horrible browser! Lets give them a chance to see your site in a proper way!</p>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="about_section">
+		<div class="intro">
+			<h1>Example</h1>
+			<p>HTML markup example to define 4 sections.</p>
+			<img src="imgs/example2.png" alt="home" />
+		</div>
+	</div>
+	<div class="section" id="roadmap_section">
+		<div class="intro">
+			<h1>Working On Tablets</h1>
+			<p>
+				Designed to fit to different screen sizes as well as tablet and mobile devices.
+				<br /><br /><br /><br /><br /><br />
+			</p>
+		</div>
+		<img src="imgs/tablets.png" alt="tablets" />
+	</div>
+
+	<div class="section" id="team_section">
+		<div class="intro">
+			<h1>Working On Tablets</h1>
+			<p>
+				Designed to fit to different screen sizes as well as tablet and mobile devices.
+				<br /><br /><br /><br /><br /><br />
+			</p>
+		</div>
+		<img src="imgs/tablets.png" alt="tablets" />
+	</div>
+
+	<div class="section" id="contact_section">
+			<div class="intro">
+				<h1>Working On Tablets</h1>
+				<p>
+					Designed to fit to different screen sizes as well as tablet and mobile devices.
+					<br /><br /><br /><br /><br /><br />
+				</p>
+			</div>
+			<img src="imgs/tablets.png" alt="tablets" />
+		</div>
+</div>
+
+</body>
+</html>
