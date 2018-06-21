@@ -2,9 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>fullPage.js One Page Scroll Sites</title>
-
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
 	<meta name="author" content="Alvaro Trigo Lopez" />
 	<meta name="description" content="fullPage plugin by Alvaro Trigo. Create fullscreen pages fast and simple. One page scroll like iPhone website." />
 	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple" />
@@ -16,55 +15,51 @@
 
 
 	<style>
-
 		/* Sections
 		 * --------------------------------------- */
-         .section{
-             text-align:center;
-         }
-         
-		/* Backgrounds will cover all the section
-        * --------------------------------------- */
-        #home_section,
-        #whitepaper_section,
-        #about_section,
-        #roadmap_section,
-		#team_section,
-		#contact_section{
-            background-size: cover;
-            background-attachment: fixed;
-        }
 
-        /* Defining each sectino background and styles
-        * --------------------------------------- */
-        #home_section{
-            background-image: url(imgs/bg1.jpg);
-        }
-        #home_section h1{
-            top: 50%;
-            transform: translateY(-50%);
-            position: relative;
-        }
-        #whitepaper_section{
-            background-image: url(imgs/bg2.jpg);
-            padding: 6% 0 0 0;
-        }
-        #about_section{
-            background-image: url(imgs/bg3.jpg);
-        }
-        #roadmap_section{
-            background-image: url(imgs/bg4.jpg);
-        }
-        #roadmap_section h1{
-            color: #000;
-        }
-		#team_section{
-            background-image: url(imgs/bg4.jpg);
-        }
-		#contact_section{
-            background-image: url(imgs/bg4.jpg);
-        }
+		#home	{
+			background-image:url('imgs/blockchain1.jpg');
+			background-size:100%
+		}
+		#home img{
+			margin: 20px 0 0 0;
+		}
 
+		#whitepaper{
+			background-image:url('imgs/blockchain-technologies.jpg');
+			background-size: 100%
+		}
+		#whitepaper img{
+			margin: 20px 0 0 0;
+		}
+
+		#about{
+			background-image:url('imgs/Blockchain-AML-1080x664.jpg');
+			background-size:100%
+		}
+
+		#roadmap{
+			background-image:url('imgs/0_K40a1ZwV3RV9btBc_.jpg');
+			background-size: 100%
+		}
+		#team{
+			background-image:url('imgs/bg1.jpg');
+		}
+		#contact{
+			background-image:url('imgs/bg1.jpg');
+		}
+		
+		
+
+		#section2 img{
+			margin: 20px 0 0 52px;
+		}
+		#section3 img{
+			bottom: 0px;
+			position: absolute;
+			margin-left: -420px;
+		}
 		.intro p{
 			width: 50%;
 			margin: 0 auto;
@@ -76,7 +71,6 @@
 			right: 149px;
 			top: 9px;
 		}
-
 	</style>
 	<!--[if IE]>
 		<script type="text/javascript">
@@ -87,48 +81,118 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 
-    <script type="text/javascript" src="vendors/scrolloverflow.js"></script>
 	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/examples.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
-				anchors: ['home', 'whitepaper', 'about', 'roadmap', 'team', 'contact'],
+				//sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+				anchors: ['home_section', 'whitepaper_section', 'about_section', 'roadmap_section', 'team_section', 'contact_section'],
 				menu: '#menu',
-				scrollingSpeed: 1000
-			});
+				scrollingSpeed: 1000,
+				lockAnchors: false,
+				navigation: true,
+				navigationPosition: 'right',
+				navigationTooltips: ['firstSlide', 'secondSlide'],
+				showActiveTooltip: false,
+				slidesNavigation: false,
+				slidesNavPosition: 'bottom',
 
+				//스크롤
+				css3: true,
+				scrollingSpeed: 700,
+				autoScrolling: true,
+				fitToSection: true,
+				fitToSectionDelay: 1000,
+				scrollBar: false,
+				easing: 'easeInOutCubic',
+				easingcss3: 'ease',
+				loopBottom: false,
+				loopTop: false,
+				loopHorizontal: true,
+				continuousVertical: false,
+				continuousHorizontal: false,
+				scrollHorizontally: false,
+				interlockedSlides: false,
+				dragAndMove: false,
+				offsetSections: false,
+				resetSliders: false,
+				fadingEffect: false,
+				normalScrollElements: '#element1, .element2',
+				scrollOverflow: false,
+				scrollOverflowReset: false,
+				scrollOverflowOptions: null,
+				touchSensitivity: 15,
+				normalScrollElementTouchThreshold: 5,
+				bigSectionsDestination: null,
+
+				//접근성
+				keyboardScrolling: true,
+				animateAnchor: true,
+				recordHistory: true,
+
+				//디자인
+				controlArrows: true,
+				verticalCentered: true,
+				sectionsColor : ['#ccc', '#fff'],
+				paddingTop: '3em',
+				paddingBottom: '10px',
+				fixedElements: '#header, .footer',
+				responsiveWidth: 0,
+				responsiveHeight: 0,
+				responsiveSlides: false,
+				parallax: false,
+				parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+				//맞춤 선택자
+				sectionSelector: '.section',
+				slideSelector: '.slide',
+
+				lazyLoading: true,
+
+				//사건(이벤트)
+				onLeave: function(index, nextIndex, direction){},
+				afterLoad: function(anchorLink, index){},
+				afterRender: function(){},
+				afterResize: function(){},
+				afterResponsive: function(isResponsive){},
+				afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
+				onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+			});
 		});
 	</script>
 
 </head>
 <body>
-    <ul id="menu">
-        <li data-menuanchor="home"><a href="#home_section">HOME</a></li>
-        <li data-menuanchor="whitepaper"><a href="#whitepaper_section">WHITE PAPER</a></li>
-        <li data-menuanchor="about"><a href="#about_section">ABOUT</a></li>
-        <li data-menuanchor="roadmap"><a href="#roadmap_section">ROADMAP</a></li>
-        <li data-menuanchor="team"><a href="#team_section">TEAM</a></li>
-        <li data-menuanchor="contact"><a href="#contact_section">CONTACT</a></li>
-    </ul>
+
+
+	<ul id="menu">
+		<li data-menuanchor="home_section"><a href="#home_section">HOME</a></li>
+		<li data-menuanchor="whitepaper_section"><a href="#whitepaper_section">WHITEPAPER</a></li>
+		<li data-menuanchor="about_section"><a href="#about_section">ABOUT</a></li>
+		<li data-menuanchor="roadmap_section"><a href="#roadmap_section">ROADMAP</a></li>
+		<li data-menuanchor="team_section"><a href="#team_section">TEAM</a></li>
+		<li data-menuanchor="contact_section"><a href="#contact_section">CONTACT</a></li>
+	</ul>
 
 
 <div id="fullpage">
-	<div class="section " id="home_section">
-		<h1>HOME</h1>
+
+	<div class="section " id="home">
+		<h1>Research & Market</h1>
 		 <input type="hidden" name="id" value="1" />
-		<p>Create Beautiful Fullscreen Scrolling Websites</p>
-		<img src="imgs/fullPage.png" alt="fullPage" />
+		<p>리서치 시장 및 해당 데이터 판매 마켓에 관한 BlockChain.</p>
+		<img src="imgs/decentralization.jpg" alt="fullPage" />
 	</div>
-	<div class="section" id="whitepaper_section">
+
+	<!-- White Paper -->
+	<div class="section" id="whitepaper">
 		<div class="slide">
 			<div class="intro">
-				<h1>Create Sliders</h1>
-				<p>Not only vertical scrolling but also horizontal scrolling. With fullPage.js you will be able to add horizontal sliders in the most simple way ever.</p>
+				<h1>Whitepaper.</h1>
+				<p>백서에 대한 간략한 내용 및 백서 링크를 표시.</p>
 				<img src="imgs/slider.png" alt="slider" />
 			</div>
-
 		</div>
 		<div class="slide">
 			<div class="intro">
@@ -152,45 +216,53 @@
 			</div>
 		</div>
 	</div>
-	<div class="section" id="about_section">
+
+	<!-- About Section -->
+	<div class="section" id="about">
 		<div class="intro">
-			<h1>Example</h1>
-			<p>HTML markup example to define 4 sections.</p>
-			<img src="imgs/example2.png" alt="home" />
+			<h1>About Section</h1>
+			<p>??? 어떤 부분에 대해서 나와야 하는가???</p>
+			<img src="imgs/example2.png" alt="example" />
 		</div>
 	</div>
-	<div class="section" id="roadmap_section">
+
+	<!-- RoadMap Section -->
+	<div class="section" id="roadmap">
 		<div class="intro">
-			<h1>Working On Tablets</h1>
+			<h1>RoadMap Section</h1>
 			<p>
-				Designed to fit to different screen sizes as well as tablet and mobile devices.
+				RoadMap Section.
 				<br /><br /><br /><br /><br /><br />
 			</p>
 		</div>
 		<img src="imgs/tablets.png" alt="tablets" />
 	</div>
 
-	<div class="section" id="team_section">
+	<!-- Team Section -->
+	<div class="section" id="team">
 		<div class="intro">
-			<h1>Working On Tablets</h1>
+			<h1>Team Section.</h1>
 			<p>
-				Designed to fit to different screen sizes as well as tablet and mobile devices.
+				Team Section.!!!
 				<br /><br /><br /><br /><br /><br />
 			</p>
 		</div>
 		<img src="imgs/tablets.png" alt="tablets" />
 	</div>
 
-	<div class="section" id="contact_section">
+	<!-- Contact Section -->
+	<div class="section" id="contact">
 			<div class="intro">
-				<h1>Working On Tablets</h1>
+				<h1>Contact Page</h1>
 				<p>
-					Designed to fit to different screen sizes as well as tablet and mobile devices.
+					123
 					<br /><br /><br /><br /><br /><br />
 				</p>
 			</div>
 			<img src="imgs/tablets.png" alt="tablets" />
-		</div>
+	</div>
+
+	
 </div>
 
 </body>
